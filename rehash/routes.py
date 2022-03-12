@@ -8,6 +8,7 @@ from flask_mail import Message
 from werkzeug.utils import secure_filename
 import PyPDF2
 import docx
+import pickle
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -55,7 +56,7 @@ def summarize():
             print(text[:25])
         else :
             upload = request.files['file']
-            this_path = os.path.join("E:\\rehash\\rehash\\static\\files", secure_filename(upload.filename))
+            this_path = os.path.join("C:\\Users\\tusha\\Documents\\rehash\\rehash\\static\\files", secure_filename(upload.filename))
             upload.save(this_path)
             result = ""
             if(this_path[-3:]=='txt'):
@@ -84,7 +85,12 @@ def summarize():
                 for para in doc.paragraphs:
                     fullText.append(para.text)
                     result = ' '.join(fullText)
-            print(result)
+            with open('C:\\Users\\tusha\\Documents\\rehash\\rehash\\model' , 'rb') as f:
+                model = pickle.load(f)
+            output = model(result, min_length=len(result)/10)
+            full = ''.join(output)
+            print(full)
+            # print(result)
         #flash('Your Account Has Been Successfully Created. Now you can Log In', 'success')
         return redirect(url_for('summarize'))
     return render_template('summarize.html',form=form)
