@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="../static/signupStyle.css">
+</head>
+<body>
+<form method="POST" action="">
+  {{ form.hidden_tag() }}
+  {{ form.email(id="input-1", placeholder="email@address.com", required=required, autofocus=autofocus) }}
+  <label for="input-1">
+    <span class="label-text">Email</span>
+    <span class="nav-dot"></span>
+  </label>
+  {{ form.username(id="input-2", placeholder="Username", required=required) }}
+  <label for="input-2">
+    <span class="label-text">Username</span>
+    <span class="nav-dot"></span>
+    <div class="signup-button-trigger">Sign Up</div>
+  </label>
+  {{ form.occupation(id="input-3", placeholder="Occupation", required=required) }}
+  <label for="input-3">
+    <span class="label-text">Occupation</span>
+    <span class="nav-dot"></span>
+  </label>
+  {{ form.password(id="input-4", placeholder="Password", required=required) }}
+  <label for="input-4">
+    <span class="label-text">Password</span>
+    <span class="nav-dot"></span>
+  </label>
+  {{ form.confirm_password(id="input-5", placeholder="Confirm Password", required=required) }}
+  <label for="input-5">
+    <span class="label-text">Confirm Password</span>
+    <span class="nav-dot"></span>
+  </label>
+  {{ form.submit(class="sub", placeholder="Create your account") }}
+  
+  <p class="tip">Press Tab</p>
+  
+</form>
+<script  src="./script.js"></script>
+</body>
+</html>

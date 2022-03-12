@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="../static/signupStyle.css">
+</head>
+<body>
+<form method="POST" action="">
+  {{ form.hidden_tag() }}
+  {{ form.username(id="input-1", placeholder="Username", required=required, autofocus=autofocus) }}
+  <label for="input-1">
+    <span class="label-text">Username</span>
+    <span class="nav-dot"></span>
+    <div class="signup-button-trigger">Sign Up</div>
+  </label>
+  {{ form.password(id="input-2", placeholder="Password", required=required) }}
+  <label for="input-2">
+    <span class="label-text">Password</span>
+    <span class="nav-dot"></span>
+  </label>
+  {{ form.submit(class="sub", placeholder="Login") }}
+  <p class="tip">Press Tab</p>
+</form>
+<script  src="./script.js"></script>
+</body>
+</html>
