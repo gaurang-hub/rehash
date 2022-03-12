@@ -42,10 +42,12 @@
 <h2 class="slogan">-Cheat sheet to big documents, because big is not always better!</h1>
   <br>
   <br>
-  <form action="">
+  <form method='POST' enctype="multipart/form-data">
     <div class="input-container">
-        <label for="comments">Comments</label>
-        <textarea name="comments" id=""></textarea>
+       
+        {{ form.hidden_tag() }}
+        {{ form.text(class="input-container", placeholder="Enter Text Here...") }}
+        <!-- <textarea class=input-container placeholder="Enter Text Here..."></textarea> -->
       </div>
       <h1 class="or">OR</h1>
       <!-- Upload Area -->
@@ -71,7 +73,8 @@
           <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
           <span id="loadingText" class="drop-zoon__loading-text">Please Wait</span>
           <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image" draggable="false">
-          <input type="file" id="fileInput" class="drop-zoon__file-input">
+          <!-- {{ form.file(class="drop-zoon__file-input", id="fileInput") }} -->
+          <input type="file" id="fileInput" class="drop-zoon__file-input" name="file">
         </div>
         <!-- End Drop Zoon -->
       
@@ -96,7 +99,8 @@
       <!-- End Upload Area -->
       <br>
       <br>
-      <input class="sub" type="submit" value="Summarize">
+      {{ form.submit(class="sub", value="Summarize") }}
+      <!-- <input class="sub" type="submit" value="Summarize"> -->
   </form>
   
   <script src="{{url_for('static', filename='summarize.js')}}" ></script>

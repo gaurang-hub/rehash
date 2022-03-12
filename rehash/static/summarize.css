@@ -333,3 +333,19 @@ color: var(--clr-light-gray);
     width: 8rem;
     color: blue;
 }
+
+.input-container{
+  width: 100 px;
+  text-align: center;
+  align-items: center;
+
+}
+
+input[type="text"]
+{
+  width:500px;
+  height: 200px;
+  word-wrap: break-word;
+  word-break: break-all;
+    
+}

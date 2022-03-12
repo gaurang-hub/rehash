@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from rehash.models import User
+from flask_wtf.file import FileField,FileAllowed
 
 class LoginForm(FlaskForm):
 	username = StringField('Username', validators=[DataRequired()])
@@ -25,3 +26,8 @@ class SignupForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user:
             raise ValidationError('Sorry this email is taken, Please choose another one')
+
+class SummarizeForm(FlaskForm):
+    text = TextAreaField()
+    file = FileField('',validators=[FileAllowed(['pdf','docx','txt','doc'])])
+    submit = SubmitField()
