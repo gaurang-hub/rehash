@@ -1,0 +1,63 @@
+body{font-family: 'Roboto', sans-serif;}
+#navbar .uk-navbar-right a{color: #3B4859;}
+#navbar{background-color: #DCE6F2;color: #3B4859;}
+
+.logo {
+    border-radius: 5%;
+    width:50%;
+    height:auto;
+    vertical-align:middle;
+    margin-left: -13rem;
+  }
+
+.img1 {
+    float: left;
+    margin-left: 5rem;
+    width: 30rem;
+    height: auto;
+    vertical-align: top;
+}
+
+/* p {
+  display:inline-block;
+  margin-left: 25rem;
+  margin-top: 2rem;
+} */
+
+.img2 {
+    float: right;
+    margin-right: 5rem;
+    width: 30rem;
+    height: auto;
+    vertical-align: top;
+}
+
+.left{
+    block-size: 20rem;
+}
+
+.heading {
+    text-align: center;
+}
+
+.slogan {
+    text-align: center;
+}
+
+.photo1 {
+    float: left;
+    margin-left: 5rem;
+    width: 15rem;
+    height: auto;
+    vertical-align: top;
+    border-radius: 50%;
+}
+
+.photo2 {
+    float: right;
+    margin-right: 5rem;
+    width: 15rem;
+    height: auto;
+    vertical-align: top;
+    border-radius: 50%;
+}

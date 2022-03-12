@@ -38,9 +38,18 @@ def signup():
 
 @app.route('/home')
 @app.route('/')
-@login_required
 def home():
     return render_template('home.html')
+
+@app.route('/summarize')
+def summarize():
+    if current_user.is_authenticated == False:
+        return redirect(url_for('login'))
+    return render_template('summarize.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.route('/logout')
 @login_required

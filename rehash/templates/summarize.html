@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Rehash Home Page</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/css/uikit.min.css'>
+<link rel="stylesheet" href="{{url_for('static', filename='summarize.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="navbar" class="uk-navbar-container" uk-sticky>
+  <div class="uk-container uk-container">
+      <div class="uk-navbar">
+          <div class="uk-navbar-left">
+              <div class="uk-navbar-item">
+                <a class="logo" href="{{url_for('home')}}"><img src="{{url_for('static', filename='images/logo.png')}}" style = "vertical-align:middle;"></a>
+              </div>
+          </div>
+          <div class="uk-navbar-right">
+              <ul class="uk-navbar-nav uk-visible@s ">
+                  <li class="active"><a href="{{url_for('home')}}"><i class="fa fa-home fa-fw mr-1"></i>Home</a></li>
+                  <li class="active"><a href="{{url_for('summarize')}}"><i class="fa fa-pencil-square-o  fa-fw mr-1"></i>Summarize</a></li>
+                  <li><a href="{{url_for('about')}}"><i class="fa fa-info-circle fa-fw mr-1"></i>About</a></li>
+                  {% if current_user.is_authenticated %}
+                  <li><a href="{{url_for('logout')}}"><i class="fa fa-sign-out fa-fw mr-1"></i>Log Out</a></li>
+                  {% else %}
+                  <li><a href="{{url_for('signup')}}"><i class="fa fa-user-plus fa-fw mr-1"></i>Register</a></li>
+                  <li><a href="{{url_for('login')}}"><i class="fa fa-sign-in fa-fw mr-1"></i>Log In</a></li> 
+                  {% endif %}
+
+                  
+              </ul>
+              <a class="uk-navbar-toggle uk-hidden@s" uk-navbar-toggle-icon href="#offcanvas" uk-toggle></a>
+          </div>
+      </div>
+  </div>
+</div>
+<h1 class="heading"> ReHash </h1>
+<h2 class="slogan">-Cheat sheet to big documents, because big is not always better!</h1>
+  <br>
+  <br>
+  <form action="">
+    <div class="input-container">
+        <label for="comments">Comments</label>
+        <textarea name="comments" id=""></textarea>
+      </div>
+      <h1 class="or">OR</h1>
+      <!-- Upload Area -->
+    <div id="uploadArea" class="upload-area">
+        <!-- Header -->
+        <div class="upload-area__header">
+          <h1 class="upload-area__title">Upload your file</h1>
+          <p class="upload-area__paragraph">
+            File should be a document
+            <strong class="upload-area__tooltip">
+              Like
+              <span class="upload-area__tooltip-data"></span> <!-- Data Will be Comes From Js -->
+            </strong>
+          </p>
+        </div>
+        <!-- End Header -->
+      
+        <!-- Drop Zoon -->
+        <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
+          <span class="drop-zoon__icon">
+            <i class='bx bxs-file-image'></i>
+          </span>
+          <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
+          <span id="loadingText" class="drop-zoon__loading-text">Please Wait</span>
+          <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image" draggable="false">
+          <input type="file" id="fileInput" class="drop-zoon__file-input">
+        </div>
+        <!-- End Drop Zoon -->
+      
+        <!-- File Details -->
+        <div id="fileDetails" class="upload-area__file-details file-details">
+          <h3 class="file-details__title">Uploaded File</h3>
+      
+          <div id="uploadedFile" class="uploaded-file">
+            <div class="uploaded-file__icon-container">
+              <i class='bx bxs-file-blank uploaded-file__icon'></i>
+              <span class="uploaded-file__icon-text"></span> <!-- Data Will be Comes From Js -->
+            </div>
+      
+            <div id="uploadedFileInfo" class="uploaded-file__info">
+              <span class="uploaded-file__name">Proejct 1</span>
+              <span class="uploaded-file__counter">0%</span>
+            </div>
+          </div>
+        </div>
+        <!-- End File Details -->
+      </div>
+      <!-- End Upload Area -->
+      <br>
+      <br>
+      <input class="sub" type="submit" value="Summarize">
+  </form>
+  
+  <script src="{{url_for('static', filename='summarize.js')}}" ></script>
+  <script src='https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit-icons.min.js'></script>
+</body>
+</html>
