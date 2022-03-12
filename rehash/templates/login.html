@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="../static/signupStyle.css">
 </head>
 <body>
+  
+    <img src="{{url_for('static', filename='images/logo.png')}}" style = "vertical-align:middle;">
+    <h1 style="display:inline-block; ">Login</h1>
+  
+  
 <form method="POST" action="">
   {{ form.hidden_tag() }}
   {{ form.username(id="input-1", placeholder="Username", required=required, autofocus=autofocus) }}

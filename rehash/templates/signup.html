@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="../static/signupStyle.css">
 </head>
 <body>
+  <img src="{{url_for('static', filename='images/logo.png')}}" >
+    <h1 >Sign Up</h1>
+  
 <form method="POST" action="">
   {{ form.hidden_tag() }}
   {{ form.email(id="input-1", placeholder="email@address.com", required=required, autofocus=autofocus) }}

@@ -19,7 +19,7 @@ def login():
             next_page = request.args.get('next')			
             return redirect(next_page) if next_page else redirect(url_for('home'))
         else:
-           return render_template('login.html')
+           return render_template('login.html',form=form)
     return render_template('login.html', form=form)
 
 @app.route('/signup', methods=['GET', 'POST'])
