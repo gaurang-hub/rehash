@@ -130,5 +130,5 @@ dmypy.json
 
 # personal folders
 .__pycache__
-.migrations
+/rehash/config.cfg
 

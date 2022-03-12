@@ -6,9 +6,7 @@ from flask_mail import Mail
 # from flask_migrate import Migrate
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '968331509722a24aaca4a6ab62dea0cd'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Gaurang1@localhost/rehashDB'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config.from_pyfile('config.cfg')
 login_manager = LoginManager()
 db = SQLAlchemy(app)
 # db.init_app(app)
