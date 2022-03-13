@@ -19,4 +19,4 @@ MAIL_USERNAME = "example@mail.com"
 
 MAIL_PASSWORD = "password"
 
-Model is of size 1.3GB, hence it cannot be uploaded on github.
+pickled Model is of size 1.3GB, hence it cannot be uploaded on github.
