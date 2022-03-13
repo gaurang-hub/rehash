@@ -1,4 +1,22 @@
 # rehash
 config file has to made seperately.
 
+SECRET_KEY = 'enter_secret_key_here'
+
+SQLALCHEMY_DATABASE_URI = 'postgresql://username:password@localhost/dbName'
+
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+MAIL_SERVER = 'smtp.googlemail.com'
+
+MAIL_PORT = 465
+
+MAIL_USE_TLS = False
+
+MAIL_USE_SSL = True
+
+MAIL_USERNAME = "example@mail.com"
+
+MAIL_PASSWORD = "password"
+
 Model is of size 1.3GB, hence it cannot be uploaded on github.
