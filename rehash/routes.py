@@ -87,20 +87,20 @@ def summarize():
                 for para in doc.paragraphs:
                     fullText.append(para.text)
                     result = ' '.join(fullText)
-            with open('C:\\Users\\tusha\\Documents\\rehash\\rehash\\model' , 'rb') as f:
-                model = pickle.load(f)
-            output = model(result, min_length=len(result)/10)
-            full = ''.join(output)
-            print(current_user.email)
-            msg = Message('Summary',
-                  sender="gaurang3000@gmail.com",
-                  recipients=[current_user.email])
-            msg.body = full
-            mail.send(msg)
-            return redirect(url_for('result', full=full))
+        with open('C:\\Users\\tusha\\Documents\\rehash\\rehash\\model' , 'rb') as f:
+            model = pickle.load(f)
+        output = model(result, min_length=len(result)/10)
+        full = ''.join(output)
+        print(current_user.email)
+        msg = Message('Summary',
+                sender="gaurang3000@gmail.com",
+                recipients=[current_user.email])
+        msg.body = full
+        mail.send(msg)
+        return redirect(url_for('result', full=full))
             # print(result)
         #flash('Your Account Has Been Successfully Created. Now you can Log In', 'success')
-        return redirect(url_for('summarize'))
+        #return redirect(url_for('summarize'))
     return render_template('summarize.html',form=form)
 
 @app.route('/about')
