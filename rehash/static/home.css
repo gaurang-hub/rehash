@@ -13,9 +13,8 @@ body{font-family: 'Roboto', sans-serif;}
 .img1 {
     float: left;
     margin-left: 5rem;
-    width: auto;
-    height: 20rem;
-    max-width: 30rem;
+    width: 25rem;
+    height: auto;
     vertical-align: top;
 }
 
@@ -69,3 +68,17 @@ body{
     background-image: linear-gradient(to bottom right, white 0%, #bfdcee 100%);
     font-family: "Lato", sans-serif;
   }
+
+.info1 {
+    margin-left: 35rem;
+    margin-right: 10rem;
+    font-size: large;
+    text-align: justify;
+}
+
+.info2 {
+    margin-left: 5rem;
+    margin-right: 40rem;
+    font-size: large;
+    text-align: justify;
+}

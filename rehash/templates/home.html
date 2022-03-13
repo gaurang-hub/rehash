@@ -42,19 +42,20 @@
   <br>
   <div class="left">
     <img class="img1" src="{{url_for('static', filename='images/chart1.png')}}">
-    <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, quos provident consequuntur quia reiciendis unde deserunt nostrum, sequi distinctio vel error, ad atque debitis amet. Consequuntur vitae earum qui ea.</p>
+    <p class="info1">The rate of increase of unstructured data i.e text,png,video etc in the recent years shows the need of summarization and abstraction of data.The horizontal axis shows the years that pass and the vertical one defines the size of data that is Structured as well as Unstructured. <br> "Like the physical universe, the digital universe is large-by 2020 containing nearly as many digital bits as there are stars in the universe. It is doubling in size every two years."</p>
   </div>
   <div class="left">
-    <img class="img2" src="{{url_for('static', filename='images/chart2.png')}}">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, doloremque cumque quasi pariatur dignissimos ut consequuntur fugiat impedit ullam minus eligendi iusto enim obcaecati, voluptate molestias veniam exercitationem, tempore neque?</p>
+    <img class="img2" src="{{url_for('static', filename='images/chart3.png')}}">
+    <p class="info2"> This flowchart depicts various steps involved in the summarization of the text.The input text is segmented into sentences which carry a specific weight which is calculated by our feature extraction methods and TF-ISF.The sentences are made into vectors so that they can go inside the model.Finally we get a similarity matrix of the sentences.Sorting the sentences we get the text we are gonna use in our summary and finally finish it up by displaying as well as emailing the text to the user.</p>
   </div>
   <div class="left">
-    <img class="img1" src="{{url_for('static', filename='images/chart3.png')}}">
-    <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, quos provident consequuntur quia reiciendis unde deserunt nostrum, sequi distinctio vel error, ad atque debitis amet. Consequuntur vitae earum qui ea.</p>
+    <img class="img1" src="{{url_for('static', filename='images/chart2.png')}}">
+    <p class="info1">This graph shows the word count of the original text vs it's summarized version.We can clealy see a large decrement in the number of words showing a positive feedback of our model.We can see arround 40% decrease in text size which is a considerable amount.</p>
   </div>
+  
   <div class="left">
     <img class="img2" src="{{url_for('static', filename='images/chart4.png')}}">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, doloremque cumque quasi pariatur dignissimos ut consequuntur fugiat impedit ullam minus eligendi iusto enim obcaecati, voluptate molestias veniam exercitationem, tempore neque?</p>
+    <p class="info2">This graph depicts that the score for each sentence of the document is calculated. The sentences with the higher scores are included in the summary. Sentences shorter than a threshold are also omitted. Cleaning the data in the sentences is also done.</p>
   </div>
   
   <script src='https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit.min.js'></script>
