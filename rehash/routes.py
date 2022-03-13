@@ -1,4 +1,5 @@
 import os
+from numpy import full
 from flask import render_template, redirect, url_for, flash, request
 from rehash import app, bcrypt, mail, db
 from rehash.forms import LoginForm, SignupForm, SummarizeForm
@@ -52,13 +53,14 @@ def summarize():
     form = SummarizeForm()
     if form.validate_on_submit():
         text = form.text.data
-        if text == None:
-            print(text[:25])
+        result = ""
+        if text != "":
+            result += text
+            # print(text[:25])
         else :
             upload = request.files['file']
             this_path = os.path.join("C:\\Users\\tusha\\Documents\\rehash\\rehash\\static\\files", secure_filename(upload.filename))
             upload.save(this_path)
-            result = ""
             if(this_path[-3:]=='txt'):
                 with open(this_path, 'r') as ftxt:
                     content = ftxt.readlines()
@@ -89,7 +91,13 @@ def summarize():
                 model = pickle.load(f)
             output = model(result, min_length=len(result)/10)
             full = ''.join(output)
-            print(full)
+            print(current_user.email)
+            msg = Message('Summary',
+                  sender="gaurang3000@gmail.com",
+                  recipients=[current_user.email])
+            msg.body = full
+            mail.send(msg)
+            return redirect(url_for('result', full=full))
             # print(result)
         #flash('Your Account Has Been Successfully Created. Now you can Log In', 'success')
         return redirect(url_for('summarize'))
@@ -98,6 +106,14 @@ def summarize():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+@app.route('/result', methods=['GET'])
+@login_required
+def result():
+    # print(full)
+    full = request.args.get("full")
+    # print(request.args.get("full"))
+    return render_template('result.html', full=full)
 
 @app.route('/logout')
 @login_required
