@@ -1,5 +1,5 @@
 # rehash
-config file has to made seperately. Sampv le config.cfg file format given below:
+config file has to made seperately. Sample config.cfg file format given below:
 
 SECRET_KEY = 'enter_secret_key_here'
 
